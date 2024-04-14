@@ -1,6 +1,6 @@
 # Caspar
 
-![Example Image](images/FSTI_Main_Gate.png)
+![Image1](images/FSTI_Main_Gate.png)
 
 ## Workflow
 
@@ -8,25 +8,28 @@
 
 - When we run the GUI, we provide an input. If the simulation with the sim_gap functionality is chosen, this document illustrates how the source code initiates.
 
-![Example Image](images/Fsti_GUI_calling_simulate_gap_functionality.png)
+[![Image2](images/Fsti_GUI_calling_simulate_gap_functionality.png)](#Image-1)
 
 #### Steps:
 
-1) Entering the simulation, understanding the source code is the right choice. Here, the button on the GUI invokes the Fsti_gap module. As shown in the image below, it starts from the source file `main.cpp` in `fsti_launcher`.
+1. Entering the simulation, understanding the source code is the right choice. Here, the button on the GUI invokes the `Fsti_gap` module. As shown in [Image 3](#Image-3) below, it starts from the source file `main.cpp` in `fsti_launcher`.
 
-   ![Example Image](images/Fsti_gap_soution_explorer_fsti_launcher.png)
+   ![Image 3](images/Fsti_gap_soution_explorer_fsti_launcher.png)
 
-2) Furthermore, the function calls the `fsti_main()` function, which is available in the `gap_coupler` source file called `main.cpp`, to initiate the simulation.
+2. Furthermore, initializing function in `fsti_launcher` calls the `fsti_main()` function, which is available in the `gap_coupler` source file called `main.cpp`, to initiate the simulation.
 
-   ![Example Image](images/Fsti_gap_solution_explorer_gap_coupler.png)
+   [![Image 4](images/Fsti_gap_solution_explorer_gap_coupler.png)](#Image-2)
 
-3) Further, on the based of the inputs in lubrication module as shown below image for `lubrication module` , the decision is made for simulation of the specific module from the available options (solve piston, solve Cylinder-Block, solve Slipper) as well as the operating condition such as number of the revolution is adjustec for the initialization of the simulation.
-   
-   ![Example Image](images/Fsti_GUI_lubrication_module.png)
-   
+3. Further, on the basis of the inputs in the lubrication module as shown in [Image 5](#Image-5) below for `lubrication module`, the decision is made for simulation of the specific module from the available options (solve piston, solve Cylinder-Block, solve Slipper) as well as the operating condition such as number of revolutions is adjusted for the initialization of the simulation.
 
-   - Using the defined the inputs of the above the image section the code implements as show below. 
-      ![Example Image](images/Fsti_gap_source_code_setting_lubrication_module.png)
-   - In the above image, smaller black box assigns no. of revolution for the simulation and the larger black box enables the modules for the simulation. 
-   - Further more `event* local_rev` and `event* global _rev` represents the the variables for keeping a track for the simulator to obtain the convergence based on and of the revolution.
-   - 
+   ![Image 5](images/Fsti_GUI_lubrication_module.png)
+
+4. Using the defined inputs of the above image section, here code implementation and meaning are shown in [Image 6](#Image-6) below.
+
+    ![Image 6](images/Fsti_gap_source_code_setting_lubrication_module.png)
+
+    ##### Explanation of the above code:
+      - In [Image 6](#Image-6), the smaller black box assigns the number of revolutions for the simulation, and the larger black box enables the modules for the simulation.
+      - Furthermore, variable tags under the green box in [Image 6](#Image-6) reveal `event* local_rev` and `event* global _rev`, representing the variables for keeping track for the simulator to obtain the convergence based on and off the revolution.
+
+5. Initialization of the simulate_gap is shown in the code below.
