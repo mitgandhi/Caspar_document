@@ -23,3 +23,10 @@
 3) Further, on the based of the inputs in lubrication module as shown below image for `lubrication module` , the decision is made for simulation of the specific module from the available options (solve piston, solve Cylinder-Block, solve Slipper) as well as the operating condition such as number of the revolution is adjustec for the initialization of the simulation.
    
    ![Example Image](images/Fsti_GUI_lubrication_module.png)
+   
+
+   - Using the defined the inputs of the above the image section the code implements as show below. 
+      ![Example Image](images/Fsti_gap_source_code_setting_lubrication_module.png)
+   - In the above image, smaller black box assigns no. of revolution for the simulation and the larger black box enables the modules for the simulation. 
+   - Further more `event* local_rev` and `event* global _rev` represents the the variables for keeping a track for the simulator to obtain the convergence based on and of the revolution.
+   - 
