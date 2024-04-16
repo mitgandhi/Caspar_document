@@ -1,0 +1,1 @@
+# Git Setup for `SHS-CASPAR` 
